@@ -1,0 +1,49 @@
+
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 295px;
+    box-shadow: 0 4px 24px 0 rgba(139, 167, 178, 0.16);
+    background: #fff;
+    text-align: center;
+    border-radius: 6px;
+
+    .text {
+        padding-top: 15px;
+        padding-left: 11px;
+        padding-bottom: 5px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 131%;
+        color: #1d293f;
+    }
+
+    .author {
+        font-family: "Helvetica", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        text-align: center;
+        color: #7c8087;
+    }
+
+    .image {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        left:115px;
+        top: 14px;
+        box-shadow: none;
+    }
+
+    .stars {
+        position: relative;
+        padding-top: 126px;
+        padding-right: 7px;
+        z-index: 1;
+        display: flex;
+        column-gap: 5px;
+        justify-content: center;
+    }
+}

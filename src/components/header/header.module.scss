@@ -1,0 +1,44 @@
+
+
+.header {
+    background-image: url('../../assets/bg-image.png');
+    width: 1440px;
+    height: 780px;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+
+    .card {
+        margin: 250px auto;
+        height: 349px;
+        width: 730px;
+        border-radius: 2px;
+        background: rgba(247, 248, 250, 0.8);
+        backdrop-filter: blur(24px);
+        z-index: 1;
+
+        .btn {
+            margin: 45px auto;
+            display: flex;
+            border-radius: 4px;
+            padding: 8px 44px;
+            width: 310px;
+            height: 40px;
+        }
+
+        p { 
+            margin: auto;
+            width: 537px;
+            text-align: center;
+            font-family: var(--third-family);
+        }
+
+        .title {
+            margin-top: 33px;
+            line-height: 144%;
+            text-align: center;
+            color: #1d252c;
+        }
+
+    }
+}

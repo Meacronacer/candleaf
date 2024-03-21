@@ -1,0 +1,28 @@
+
+
+.popular {
+    margin: auto;
+    padding-top: 90px;
+    width: 1110px;
+    height: 380px;
+
+    .title {
+        text-align: center;
+    }
+
+    .pText {
+        margin-top: 5px;
+        line-height: 153%;
+        letter-spacing: 0.01em;
+        text-align: center;
+        color: #5e6e89;
+    }
+
+
+    .popularProductList {
+        padding-top: 58px;
+        display: grid;
+        column-gap: 31px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

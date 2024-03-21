@@ -1,0 +1,64 @@
+
+
+.footer {
+    width: 1440px;
+    height: 383px;
+    background-color: #272727;
+    margin-top: 70px;
+
+    .terms {
+        margin-top: 43px;
+        margin-left: 320px;
+        display: flex;
+        color: white;
+        column-gap: 65px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            row-gap:20px;
+            line-height: 180%;
+            color: #e1e1e1;
+
+            li {
+                cursor: pointer;
+
+                &:first-child {
+                    color: #56b280;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .line {
+        display: inline-block;
+        margin-left: 165px;
+        margin-top: 60px;
+        border: 1.50px solid #fff;
+        width: 1110px;
+        height: 0px;
+    }
+
+    .logo {
+        width: fit-content;
+        margin-left: 165px;
+        margin-top:  -7px;
+        .image {
+            margin: 0;
+            width: 250px;
+            height: 100px;
+        }
+    
+        .description {
+            width: fit-content;
+            margin-top:  -10px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 142%;
+            letter-spacing: -0.03em;
+            color: #fff;
+        }
+    }
+}

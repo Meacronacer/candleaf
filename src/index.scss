@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import-normalize;
+
+
+:root {
+  font-family: "Roboto", "Poppins","Helvetica", sans-serif;
+  --first-family: "Roboto", sans-serif;
+  --second-family: "Poppins", sans-serif;
+  --third-family: "Helvetica", sans-serif;
+  --font3: "Avenir", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0;
+  color: black;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  margin: 0;
+  all: unset;
+}
+
+p {
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  /* This inherits all CSS values including `overflow` */
+  all: inherit;
+  }
+
+body {
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--second-family), sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+}
+
+button {
+  font-family: var(--first-family), sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  background: #56b280;
+  cursor: pointer;
+  border: none;
+}

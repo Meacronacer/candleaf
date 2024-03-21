@@ -1,0 +1,30 @@
+
+
+.testimonials {
+    height: 601px;
+    background: rgba(86, 178, 128, 0.1);
+    padding-left: 165px;
+    padding-right: 165px;
+
+    .text {
+        text-align: center;
+        padding-top: 90px;
+    }
+
+    p {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        margin-top: 8px;
+        font-size: 18px;
+        line-height: 153%;
+        letter-spacing: 0.01em;
+        color: #5e6e89;
+    }
+
+    .cards {
+        margin-top: 37px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 31px;
+    }
+}

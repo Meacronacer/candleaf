@@ -1,0 +1,65 @@
+
+
+.benefits {
+    margin-top: 125px;
+    height: 800px;
+    width: 1440px;
+    display: flex;
+    background-color: #F7F8FA;
+
+    .textLeft {
+        width: 540px;
+        height: 325px;
+        padding-top: 145px;
+        padding-left: 165px;
+        
+        h1 {
+            line-height: 116%;
+            color: #1d252c;
+        }
+
+        .textP {
+            margin-top: 16px;
+            line-height: 142%;
+            color: #56b280;
+        }
+
+        .learnMore {
+            margin-top: 68px;
+            border-radius: 4px;
+            padding: 8px 44px;
+            width: 194px;
+            height: 40px;
+        }
+
+        .checkmarks {
+            margin-top: 38px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+    
+            .item {
+                display: flex;
+                column-gap:10px;
+                font-size: 16px;
+                line-height: 180%;
+                color: #000;
+            }
+        }
+    }
+
+    .photoRight {
+        margin-top: 70px;
+        margin-left: 14px;
+        transition: 1s ease;
+        cursor: pointer;
+
+        &:hover {
+            -webkit-transform: scale(1.01);
+            -ms-transform: scale(1.01);
+            transform: scale(1.01);
+            transition: 1s ease;
+        }
+    }
+
+}

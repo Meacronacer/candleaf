@@ -1,0 +1,42 @@
+
+
+.navbar {
+    height: 75px;
+    width: 1105px;
+    background-color:#fff;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 170px 0 165px;
+    z-index: 2;
+
+    .logo {
+        cursor: pointer;
+    }
+
+    .links {
+        cursor: pointer;
+        height: 25px;
+        margin-left: -47px;
+        width: 352px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+
+        .item {
+            img {
+                margin-right: -6px;
+                margin-left: 6px;
+                margin-bottom: 3px;
+            }
+        }
+    }
+
+    .cart {
+        cursor: pointer;
+        display: flex;
+        column-gap:20px;
+    }
+
+}
