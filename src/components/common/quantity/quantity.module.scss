@@ -1,0 +1,49 @@
+
+
+
+.quantity {
+    margin: auto;
+    width: 100px;
+    display: flex;
+    border: 2px solid #14b057;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    button {
+        background-color: #56b280;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        width: 30px;
+        height: auto;
+        text-align: center;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: #259d79;
+        }
+    }
+
+    .inputBox {
+        width: 20px;
+        text-align: center;
+        border: none;
+        padding: 8px 10px;
+        font-size: 16px;
+        outline: none;
+      }
+      
+      /* Hide the number input spin buttons */
+      .inputBox::-webkit-inner-spin-button,
+      .inputBox::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      
+      .inputBox[type="number"] {
+        --moz-appearance: textfield;
+        
+      }
+  }

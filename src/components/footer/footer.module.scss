@@ -1,14 +1,18 @@
 
 
 .footer {
-    width: 1440px;
-    height: 383px;
+    width: 100%;
+    height: 100%;
     background-color: #272727;
     margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding-bottom: 100px;
 
     .terms {
         margin-top: 43px;
-        margin-left: 320px;
+        margin-left: 0px;
         display: flex;
         color: white;
         column-gap: 65px;
@@ -33,8 +37,7 @@
 
     .line {
         display: inline-block;
-        margin-left: 165px;
-        margin-top: 60px;
+        margin-top: 58px;
         border: 1.50px solid #fff;
         width: 1110px;
         height: 0px;
@@ -42,8 +45,9 @@
 
     .logo {
         width: fit-content;
-        margin-left: 165px;
-        margin-top:  -7px;
+        margin-left: -103px;
+        margin-top:  -2px;
+        margin-right: 318px;
         .image {
             margin: 0;
             width: 250px;

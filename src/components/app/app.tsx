@@ -1,21 +1,18 @@
-import Benefits from '../benefits/benefits'
-import Footer from '../footer/footer'
-import Header from '../header/header'
-import Navbar from '../navbar/navbar'
-import Popular from '../popular/popular'
-import Products from '../products/products'
-import Testimonials from '../testimonials/testimonials'
+import CartPage from '../../pages/cartPage/cartPage';
+import HomePage from '../../pages/homePage/homePage';
+import ProductDetailPage from '../../pages/productDetailPage/productDetailPage';
 import root from './app.module.scss'
+
+import { Routes, Route, Navigate } from "react-router-dom";
 
 const App = () => {
     return <div className={root.app}>
-        <Navbar/>
-        <Header/>
-        <Products/>
-        <Benefits/>
-        <Testimonials/>
-        <Popular/>
-        <Footer/>
+        <Routes>
+            <Route path='/' element={<HomePage/>} />
+            <Route path='/product' element={<ProductDetailPage/>} />
+            <Route path='/cart' element={<CartPage/>} />
+            <Route path='/payment' />
+        </Routes>
     </div>
 }
 
