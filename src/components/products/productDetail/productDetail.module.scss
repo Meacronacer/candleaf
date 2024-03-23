@@ -4,6 +4,7 @@
     height: 721px;
     width: 1440px;
     display: flex;
+    margin-bottom: 50px;
 
     .leftContent {
         width: 700px;
@@ -86,13 +87,6 @@
                     padding: 8px 44px;
                     width: 350px;
                     height: 42px;
-                    transition: 0.3s;
-
-                    &:hover {
-                        background-color:#fff;
-                        color: #56b280;
-                        border: 1px solid #56b280;
-                    }
                 }
 
                 .weekTopContent {

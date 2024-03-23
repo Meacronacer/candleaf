@@ -1,4 +1,4 @@
-import ProductItem from './product-item/product-item'
+import ProductItem from '../product-item/product-item'
 import root from './products.module.scss'
 
 const Products = () => {

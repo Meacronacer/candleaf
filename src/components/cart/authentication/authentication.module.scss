@@ -1,0 +1,105 @@
+
+
+.authentication {
+    margin-top: 80px;
+    display: flex;
+    column-gap:100px;
+    margin-left: 135px;
+
+    .usefInfo {
+
+        width: 445px;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 128%;
+            letter-spacing: -0.04em;
+            color: #272727;
+        }
+
+        input {
+            height: 40px;
+            width: 100%;
+            border: 0.50px solid #56b280;
+            padding: 7px 17px 7px 17px;
+        }
+
+        button {
+            border-radius: 4px;
+            padding: 8px 44px;
+            width: 222px;
+            height: 40px;
+        }
+
+        input[type="checkbox"] {
+            border: 2px solid #b7b7b7;
+            width: 16px;
+            height: 16px;
+        }
+
+        .submit {
+            display: flex;
+            margin-top: 60px;
+            column-gap: 135px;
+
+            .back {
+                font-family: var(--first-family);
+                font-size: 18px;
+                line-height: 142%;
+                letter-spacing: -0.05em;
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                color: #56b280;
+            }
+        }
+
+        .contact {
+            margin-top: 44px;
+            display: flex;
+            text-align: left;
+    
+            .account {
+                margin-left: auto;
+                .login {
+                    margin-left: 10px;
+                    color: #56b280;
+                }
+            }
+        }
+
+        .EmailOrPhone {
+            margin-top: 12px;
+        }
+
+        .discount {
+            margin-top: 10px;
+            display: flex;
+            column-gap: 5px;
+            float: left;
+        }
+
+        .ShippingAddress {
+            width: 100%;
+            margin-top: 40px;
+
+            .nameAndSecondName {
+                width: 100%;
+                margin-top: 12px;
+                display: flex;
+                column-gap:13px;
+            }
+
+            .city {
+                margin-top: 12px;
+                display: flex;
+                column-gap: 12px;
+            }
+        }
+
+
+
+    }
+}

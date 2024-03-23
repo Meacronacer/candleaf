@@ -1,4 +1,4 @@
-import ProductItem from '../productsList/product-item/product-item'
+import ProductItem from '../products/product-item/product-item'
 import root from './popular.module.scss'
 
 const Popular = () => {

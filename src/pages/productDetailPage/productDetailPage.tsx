@@ -1,4 +1,4 @@
-import ProductDetail from "../../components/productDetail/productDetail"
+import ProductDetail from "../../components/products/productDetail/productDetail"
 import Layout from "../layout/layout"
 
 

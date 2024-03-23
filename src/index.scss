@@ -20,6 +20,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 a {
   margin: 0;
   all: unset;
@@ -51,6 +60,23 @@ img {
   all: inherit;
   }
 
+.line {
+  border: 0.25px solid #818181;
+  width: 410px;
+  height: 0px;
+  margin: auto;
+}
+
+.greenTextWithDash {
+  font-size: 18px;
+  line-height: 142%;
+  letter-spacing: -0.05em;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-align: center;
+  color: #56b280;
+}
+
 body {
   margin: 0;
 }
@@ -75,4 +101,19 @@ button {
   background: #56b280;
   cursor: pointer;
   border: none;
+  border-radius: 4px;
+  padding: 8px 44px;
+  transition: 0.3s;
+  border: 1px solid #56b280;
+
+  &:hover {
+    border: 1px solid #56b280;
+    background: #fff;
+    color: #56b280;
+  }
+
+  &:disabled {
+    background: #d6d6d6;
+    color: #272727;
+  }
 }

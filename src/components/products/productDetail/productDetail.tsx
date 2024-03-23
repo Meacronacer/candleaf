@@ -1,7 +1,7 @@
 import root from './productDetail.module.scss'
-import productImage from '../../assets/productDetail.png'
+import productImage from '../../../assets/productDetail.png'
 import { BsCart3 } from "react-icons/bs";
-import Quantity from '../common/quantity/quantity';
+import Quantity from '../../common/quantity/quantity';
 
 
 const ProductDetail = () => {

@@ -3,12 +3,13 @@
 .benefits {
     margin-top: 125px;
     height: 800px;
+    padding-bottom: 200px;
     width: 1440px;
     display: flex;
     background-color: #F7F8FA;
 
     .textLeft {
-        width: 540px;
+        width: 707px;
         height: 325px;
         padding-top: 145px;
         padding-left: 165px;
@@ -25,11 +26,8 @@
         }
 
         .learnMore {
-            margin-top: 68px;
-            border-radius: 4px;
-            padding: 8px 44px;
-            width: 194px;
-            height: 40px;
+            margin-top: 68px;  
+
         }
 
         .checkmarks {
@@ -51,15 +49,8 @@
     .photoRight {
         margin-top: 70px;
         margin-left: 14px;
-        transition: 1s ease;
         cursor: pointer;
 
-        &:hover {
-            -webkit-transform: scale(1.01);
-            -ms-transform: scale(1.01);
-            transform: scale(1.01);
-            transition: 1s ease;
-        }
     }
 
 }

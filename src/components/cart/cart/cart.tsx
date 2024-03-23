@@ -1,6 +1,6 @@
 import root from './cart.module.scss'
-import spiced from '../../assets/spiced-mint.png'
-import Quantity from '../common/quantity/quantity'
+import spiced from '../../../assets/spiced-mint.png'
+import Quantity from '../../common/quantity/quantity'
 
 
 const Cart = () => {
