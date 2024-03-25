@@ -4,7 +4,7 @@ import FooterLogo from '../../assets/footer.svg'
 const Footer = () => {
     return <section className={root.footer}>
         <div className={root.line}></div>
-        <div style={{display: 'flex'}}>
+        <div className={root.info} style={{display: 'flex'}}>
             <div className={root.logo}>
                 <img className={root.image} src={FooterLogo} />
                 <p className={root.description}>

@@ -21,10 +21,10 @@ const SummaryProducts = () => {
 
         <div className={root.coupon}>
             <input placeholder='Coupon code' />
-            <button>Add code</button>
+            <button className={root.addCodeBtn} >Add code</button>
         </div>
 
-        <div className='line'></div>
+        <div className={root.line}></div>
 
         <p className={root.subTotal}>
             Subtotal
@@ -40,7 +40,7 @@ const SummaryProducts = () => {
             </span>
         </p>
 
-        <div className='line'></div>
+        <div className={root.line}></div>
 
         <p className={root.subTotal}>
             Total

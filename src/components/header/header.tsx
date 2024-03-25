@@ -2,6 +2,7 @@ import root from './header.module.scss'
 
 const Header = () => {
     return <div className={root.header}>
+
         <div className={root.card}>
             <div>
                 <h1 className={root.title}>

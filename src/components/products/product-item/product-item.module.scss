@@ -3,7 +3,7 @@
 .card {
     cursor: pointer;
     width: 255px;
-    height: 230px;
+    height: fit-content;
     transition: 1s ease;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
@@ -16,23 +16,19 @@
     
     img {
         width: 255px;
-        height: 177px;
-        
-    }
-
-
-    .bg {
-        height: 154px;
+        height: 170px;
         background-color: #F7F8FA;
+        box-shadow: none;
     }
 
-    .price {
+    .info {
+        padding-top: 10px;
+        position: relative;
+        z-index: 1;
+        width: 255px;
         height: 76px;
-        background: #fff;
-
-        h6 {
-            padding-top: 13px;
-            margin-left: 26px;
+        padding-inline: 26px;
+        .title {
             font-family: "Poppins", sans-serif;
             font-weight: 500;
             font-size: 16px;
@@ -41,9 +37,8 @@
             color: #1d293f;
         }
 
-        span {
+        .price {
             float: right;
-            margin-right: 26px;
             font-family: "Roboto", sans-serif;
             font-weight: 500;
             font-size: 20px;

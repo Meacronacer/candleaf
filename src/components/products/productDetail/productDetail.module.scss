@@ -4,138 +4,139 @@
     height: 721px;
     width: 1440px;
     display: flex;
+    margin-top: 122px;
     margin-bottom: 50px;
 
     .leftContent {
-        width: 700px;
-        padding-top: 61px;
-        padding-left: 82px;
-        img {
-            height: 433px;
-            width: 540px;
-        }
+        margin-left: 165px;
+        text-align: center;
 
-        p {
-            margin-top: 17px;
-            margin-left: 49px;
+        .logoInfo {
             font-size: 22px;
-            line-height: 116%;
-            letter-spacing: -0.04em;
-            text-align: center;
-        }
+            display: flex;
+            flex-direction: column;
+            row-gap:14px;
 
-        .shipping {  
-                display: block;
-                padding-top: 21px;
+            .shipping {
                 font-size: 20px;
-                color: #56b280;
-                font-weight: 500;
-                text-align: center;
+            }
         }
     }
 
+
+
     .rightContent {
-        padding-top: 122px;
-        padding-right: 50px;
-        height: 300px;
-        width: 700px;
+        margin-left: 31px;
+        margin-top: 10px;
+
+        input[type='radio'] {
+            width: 16px;
+            height: 16px;
+        }
+
+        h2 {
+            font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 26px;
+        }
+
+        .content {
+            display: flex;
+            column-gap:93px;
+
+            .priceAndQuantity {
+                margin-top: 20px;
+                width: fit-content;
+    
+                .price {
+                    font-family: var(--second-family);
+                    font-weight: 600;
+                    font-size: 26px;
+                    color: #56b280;
+                }
+    
+                .quantity {
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+            }
+    
+    
+            .timePurchase {
+                margin-top: 20px;
+
+                .btn {
+                    width: 100%;
+                    margin-bottom: 50px;
+                }
+
+                .oneTime {
+                    display: flex;
+                    column-gap:5px;
+                    margin-bottom: 20px;
+                    margin-left: 10px;
+                }
+
+                .evryWeek {
+                    border: 1px solid #e6e6e6;
+                    border-radius: 7px;
+                    width: 350px;
+                    height: 117px;
+                    padding: 10px;
+                    margin-bottom: 67px;
+
+                    .subscribe {
+                        display: flex;
+                        column-gap:10px;
+                    }
+
+                    .description {
+                        font-family: var(--third-family);
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 98%;
+                        color: #818181;
+                        padding: 5px;
+                        margin-top: 5px;
+                    }
+
+                }
+
+            }
+        }
+
+
 
 
         .info {
-            width: 540px;
-            height: fit-content;
-            font-family: var(--third-family);
-            padding: 20px;
-            line-height: 160%;
-            text-align: center;
-            margin-top: 150px;
             border: 1px solid #e6e6e6;
             border-radius: 7px;
+            width: 540px;
+            height: 131px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-inline: 22px;
+            row-gap:8px;
 
-            span {
-                display: flex;
-                justify-content: center;
+            .spans {
+                display: flex; 
                 column-gap:5px;
                 color: #849a8e;
+            }
 
-                li {
-                    font-weight: 700;
-                    color: #1d252c;
-                }
+            .lins {
+                font-family: "Helvetica", sans-serif;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 160%;
+                color: #1d252c;
+
             }
         }
 
-        .subscribe {
-            margin-top: 10px;
-            margin-left: 100px;
-
-            .everyWeeks {
-                margin-top: 22px;
-                margin-left: -15px;
-                width: 350px;
-                height: 117px;
-                border: 1px solid #e6e6e6;
-                border-radius: 7px;
-
-                .btn {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    column-gap:10px;
-                    margin-top: 83px;
-                    border-radius: 4px;
-                    padding: 8px 44px;
-                    width: 350px;
-                    height: 42px;
-                }
-
-                .weekTopContent {
-                    margin-top: 10px;
-                    margin-right: 10px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    column-gap: 10px;
-                }
-
-                .description {
-                    margin-left: 10px;
-                    padding: 10px;
-                    font-family: var(--third-family);
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 98%;
-                    color: #818181;
-                }
-
-                .ewInput {
-                    margin-left: 20px;
-                }
-            }
-        }
-
-        h1 {
-            font-size: 26px;
-            line-height: 222%;
-            letter-spacing: -0.03em;
-        }
-
-        .price {
-            font-weight: 600;
-            font-size: 26px;
-            line-height: 222%;
-            letter-spacing: -0.03em;
-            color: #56b280;
-        }
-
-        .quantityTitle {
-            margin-left: 13px;
-            margin-bottom: 5px;
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: 400;
-        }
-          
     }
+
 
 }

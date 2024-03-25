@@ -1,24 +1,23 @@
-
-import root from './shippingMethod.module.scss'
+// styles used from global.scss
 
 const ShippingMethod = ({firstChoose = false} : any) => {
 
     return <>
         {firstChoose ? 
-            <div className={root.contact}>
-                <p className={root.pText}>
+            <div className='contact'>
+                <p className='pText'>
                     Method
-                    <span className={root.sSpan} title='Standard Shipping - FREE'
+                    <span className='sSpan'title='Standard Shipping - FREE'
                     >Standard Shipping - FREE</span>
                 </p>
 
-                <a className={root.edit}>Edit</a>
+                <a className='edit'>Edit</a>
             </div>
             :
-            <div className={root.shippingMethod}>
-                <input type='radio'/>
+            <div className='shippingMethod'>
+                <input checked type='radio'/>
                 <p>Standard Shipping</p>
-                <span  className={root.free}>Free</span>
+                <span  className='free'>Free</span>
             </div>
     }
 

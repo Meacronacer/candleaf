@@ -8,7 +8,7 @@
     overflow-y: auto;
     max-height: 820px;
 
-    button {
+    .addCodeBtn {
         border-radius: 4px;
         padding-inline: 20px;
         height: 40px;
@@ -53,6 +53,13 @@
         background: #F7F8FA;
         width: 160px;
         height: 130px;
+    }
+
+    .line {
+        margin-top: 30px;
+        border: 1px solid rgba(86, 178, 128, 0.2);
+        width: 410px;
+        height: 0px;
     }
 
     .coupon {
