@@ -9,7 +9,7 @@ const ThanksForOrder = () => {
             <CartNavigation/>
 
             <div className={root.text}>
-                <img className={root.image} src={checkCircle} />
+                <img className={root.image} alt='checkCircle' src={checkCircle} />
                 <h2>Payment Confirmed</h2>
                 <span >ORDER #2039</span>
                 <p className={root.desc}> Thank you Joe for buying Candleaf. The nature is grateful to you. <br/>

@@ -1,12 +1,16 @@
 import root from './product-item.module.scss'
-import spiced from '../../../assets/spiced-mint.png'
+import { Product } from '../types/product'
+import { useNavigate } from 'react-router-dom'
 
-const ProductItem = () => {
-    return <div className={root.card}>
-                <img src={spiced} alt='product' />
+const ProductItem: React.FC<Product> = ({id, name, image, price}) => {
+    const navigate = useNavigate()
+
+
+    return <div onClick={() => navigate(`product/${id}`)} className={root.card}>
+                <img src={image} alt='product' />
             <div className={root.info}>
-                <h6 className={root.title}>Spiced Mint</h6>
-                <span className={root.price}>9.99$</span>
+                <p className={root.title}>{name}</p>
+                <span className={root.price}>{price}$</span>
             </div>
     </div>
 }

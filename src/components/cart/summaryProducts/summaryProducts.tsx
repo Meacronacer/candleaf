@@ -8,7 +8,7 @@ const SummaryProducts = () => {
             <tbody>
                 <tr>
                     <td>
-                        <img src={spiced} /> 
+                        <img src={spiced} alt='product' /> 
                         <div className={root.itemCount}>1</div>
                         <p>
                         <span>Spiced Mint Candleaf®</span> <br/>

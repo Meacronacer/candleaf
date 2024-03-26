@@ -16,7 +16,7 @@
     
     img {
         width: 255px;
-        height: 170px;
+        height: fit-content;
         background-color: #F7F8FA;
         box-shadow: none;
     }
@@ -48,4 +48,27 @@
         }
     }
     
+}
+
+
+@media (max-width:480px) {
+    .card {
+        width: 346px;
+        height: 200px;
+        position: relative;
+
+
+        img {
+            height: 200px;
+            width: 346px;
+        }
+        
+        .info {
+            width: 346px;
+            position: absolute;
+            bottom: 0;
+            background-color: #fff;
+
+        }
+    }
 }

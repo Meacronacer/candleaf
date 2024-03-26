@@ -6,7 +6,7 @@ const Footer = () => {
         <div className={root.line}></div>
         <div className={root.info} style={{display: 'flex'}}>
             <div className={root.logo}>
-                <img className={root.image} src={FooterLogo} />
+                <img className={root.image} alt='logo' src={FooterLogo} />
                 <p className={root.description}>
                     Your natural candle made for <br/> your home and for your wellness.
                 </p>

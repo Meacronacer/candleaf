@@ -19,7 +19,7 @@ const Cart = () => {
 
                         <tr>
                             <td>
-                                <img src={spiced} /> 
+                                <img src={spiced} alt='product' /> 
                                 <p>
                                 <span>Spiced Mint Candleaf®</span> <br/>
                                 <a>Remove</a> 

@@ -3,8 +3,6 @@ import CartNavigation from '../cartNavigation/cartNavigation'
 import SummaryProducts from '../summaryProducts/summaryProducts'
 import root from './payment.module.scss'
 import creditCartLogo from '../../../assets/CreditCardFill.svg'
-import ShippingMethod from '../../common/shippingMethod/shippingMethod'
-
 
 const Payment = () => {
     return <div className={root.payment}>
@@ -19,7 +17,7 @@ const Payment = () => {
                 
                 <div className={root.creditCart}>
                     <div className={root.logo}>
-                        <img src={creditCartLogo} />
+                        <img src={creditCartLogo} alt='creditCart' />
                         <p className={root.text}>Credit Card</p>
                     </div>
 

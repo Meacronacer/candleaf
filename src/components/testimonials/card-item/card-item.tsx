@@ -3,7 +3,7 @@ import avatar from '../../../assets/avatar.png'
 import { IoIosStar, IoIosStarHalf  } from "react-icons/io";
 const CardItem = () => {
     return <div className={root.card}>
-        <img src={avatar} className={root.image}/>
+        <img src={avatar} alt='avatar' className={root.image}/>
         <div className={root.stars}>
             <IoIosStar color='#56b280' size={24}/>
             <IoIosStar color='#56b280' size={24}/>

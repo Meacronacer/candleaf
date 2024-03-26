@@ -12,10 +12,10 @@ const Benefits = () => {
                     <img src={benefits} alt='benefits' />
                 </div>
                 <div className={root.checkmarks}>
-                    <p className={root.item}><img src={checkmark} />  Eco-sustainable:All recyclable materials, 0% CO2 emissions </p> 
-                    <p className={root.item}><img src={checkmark} />  Hyphoallergenic: 100% natural, human friendly ingredients</p>
-                    <p className={root.item}><img src={checkmark} />  Handmade: All candles are craftly made with love. </p> 
-                    <p className={root.item}><img src={checkmark} />  Long burning: No more waste. Created for last long. </p>
+                    <p className={root.item}><img src={checkmark} alt='checkmark' />  Eco-sustainable:All recyclable materials, 0% CO2 emissions </p> 
+                    <p className={root.item}><img src={checkmark} alt='checkmark' />  Hyphoallergenic: 100% natural, human friendly ingredients</p>
+                    <p className={root.item}><img src={checkmark} alt='checkmark' />  Handmade: All candles are craftly made with love. </p> 
+                    <p className={root.item}><img src={checkmark} alt='checkmark' />  Long burning: No more waste. Created for last long. </p>
                     <button className={root.learnMore}>Learn more</button>
                 </div>
             </div>
