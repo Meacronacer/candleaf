@@ -1,21 +1,28 @@
 import root from './summaryProducts.module.scss'
 import spiced from '../../../assets/spiced-mint.png'
+import { useAppSelector } from '../../../hooks/hooks'
 
 
 const SummaryProducts = () => {
-    return <div className={root.summaryProducts}>
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <img src={spiced} alt='product' /> 
-                        <div className={root.itemCount}>1</div>
+    const {cartItems, totalPrice} = useAppSelector(state => state.cart)
+
+    const products = cartItems.map(item => {
+        return <tr key={item.id}>
+                <td>
+                        <img src={item.image} alt='product' /> 
+                        <div className={root.itemCount}>{item.quantity}</div>
                         <p>
-                        <span>Spiced Mint Candleaf®</span> <br/>
-                        <span>$9.99</span> 
+                        <span>{item.name}®</span> <br/>
+                        <span>${(item.price * item.quantity).toFixed(2)}</span> 
                         </p>
                     </td>
                 </tr>
+    })
+
+    return <div className={root.summaryProducts}>
+        <table>
+            <tbody>
+                {products}
             </tbody>
         </table>
 
@@ -29,7 +36,7 @@ const SummaryProducts = () => {
         <p className={root.subTotal}>
             Subtotal
             <span>
-                $  9.99
+                $  {totalPrice}
             </span>
         </p>
 
@@ -45,7 +52,7 @@ const SummaryProducts = () => {
         <p className={root.subTotal}>
             Total
             <span>
-                $ 9.99
+                $ {totalPrice}
             </span>
         </p>
 

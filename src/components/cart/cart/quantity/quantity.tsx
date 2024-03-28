@@ -11,7 +11,6 @@ interface QuantityProps {
 const Quantity: React.FC<QuantityProps> = ({id, quantity}) => {
     const dispatch = useAppDispatch()
 
-
     return <div className={root.quantity}>
             <button disabled={quantity === 1} onClick={() => dispatch(quantityDecrement(id))}>-</button>
             <input readOnly type="number" className={root.inputBox} value={quantity} />

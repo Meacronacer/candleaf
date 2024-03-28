@@ -10,18 +10,11 @@
 
 
     .title {
-        text-align: right;
         width: 100%;
-        position: relative;
         h2 {
-            position: absolute;
-            right: 400px;
-            font-family: "Poppins", sans-serif;
+            font-family: var(--second-family);
             font-weight: 500;
             font-size: 26px;
-            line-height: 222%;
-            letter-spacing: -0.03em;
-            color: #272727;
         }
     }
 
@@ -170,6 +163,7 @@
         padding-inline: 100px;
         .info {
             flex-direction: column;
+            width: fit-content;
             margin: auto;
             height: fit-content;
         }
@@ -187,11 +181,11 @@
         }
 
         .title {
-            text-align: center;
-
+            width: fit-content;
+        
             h2 {
                 font-size: 40px;
-                right: 0;
+                width:fit-content;
                 position: relative;
             }
         }
@@ -204,32 +198,38 @@
     padding-inline: 10px;
 
     .info {
-        .productInfo {
-            flex-direction: column;
-            column-gap: 50px;
-            margin-top: 30px;
+        &__inner {
 
-            .priceAndQuantity {
-                flex-direction: row;
-                align-items:center;
-                justify-content: space-around;
-                margin-bottom: 30px;
-            }
-        }
-    }
-
-    .delivery {
-        .productOptions {
-            .spans {
-                font-size: 14px;
-
-                .lins {
-                    font-size: 14px;
+            .productInfo {
+                flex-direction: column;
+                column-gap: 50px;
+                margin-top: 30px;
+    
+                .priceAndQuantity {
+                    flex-direction: row;
+                    align-items:center;
+                    justify-content: space-around;
+                    margin-bottom: 30px;
                 }
             }
-
         }
-    }
+    
+        .delivery {
+            .productOptions {
+                .spans {
+                    font-size: 14px;
+    
+                    .lins {
+                        font-size: 14px;
+                    }
+                }
+    
+            }
+        }
+    
+            
+        }
+
 
     }
 }

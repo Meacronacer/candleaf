@@ -1,95 +1,82 @@
 import root from './productDetail.module.scss'
+import { useEffect } from 'react';
 import { BsCart3 } from "react-icons/bs";
-import Quantity from '../../cart/cart/quantity/quantity';
 import { useParams } from 'react-router-dom';
 import { useGetProductByIdQuery } from '../../../redux/api/productsSlice';
 import { useState } from 'react';
 import { addItemToCart } from '../../../redux/slices/cartSlice';
 import { useAppDispatch } from '../../../hooks/hooks';
+import { PuffLoader } from 'react-spinners';
+import Quantity from '../../cart/cart/quantity/quantity';
 
 
 const ProductDetail: React.FC = () => {
-    const [quantity, setQuantity] = useState<number>(1)
+    const [quantity] = useState<number>(1)
     const dispatch = useAppDispatch()
 
     const {productId} = useParams()
     const {data, isLoading} = useGetProductByIdQuery(productId)
 
-    if (isLoading) return null
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
 
-    const incrementQuantity = () => {
-        setQuantity(prev => prev + 1)
+    if (isLoading) {
+        return <div style={{marginTop: '150px'}} ><PuffLoader size={300} color="#36d7b7" /> </div>
     }
-
-    const decrementQuantity = () => {
-        if (quantity === 1) return
-
-        setQuantity(prev => prev - 1)
-    }
-
-
-    const quantityMutation = (mutation: string): void => {
-        if (mutation === 'decrement' && quantity === 1) {
-            return
-        } else if (mutation === 'increment') {
-            setQuantity(prev => prev + 1)
-        } else {
-            setQuantity(prev => prev - 1)
-        }   
-    }
-
-    console.log(data)
 
     return <div className={root.productDetail}>
-
-
-        <div className={root.title}>
-            <h2>{data.name}®</h2>
-        </div>
 
         <div className={root.info}>
             <img className={root.image} src={data.image} />
 
-            <div className={root.productInfo}>
-                <div className={root.priceAndQuantity}>
-                    <span className={root.price}>${data.price}</span>
-                    <div className={root.quantity}>
-                    </div>
+            <div className={root.info__inner}>
+                <div className={root.title}>
+                    <h2>{data.name}®</h2>
                 </div>
 
-                <div className={root.purchase}>
+                <div className={root.productInfo}>
+                    <div className={root.priceAndQuantity}>
+                        <span className={root.price}>${data.price}</span>
+                        <div className={root.quantity}>
+                            {/* <Quantity id={data.id} quantity={1} /> */}
+                        </div>
+                    </div>
 
-                    <div className={root.oneTime}>
-                        <input type='radio' id='oneTime' />
-                        <label htmlFor='oneTime' >One time purchase</label>
+                    <div className={root.purchase}>
 
+                        <div className={root.oneTime}>
+                            <input type='radio' id='oneTime' name='week' />
+                            <label htmlFor='oneTime' >One time purchase</label>
+
+                        </div>
+                        
+                        <div className={root.everyWeek}>
+                            <div className={root.weekInput}>
+                                <input type='radio' id='evryTime' name='week' />
+                                <label htmlFor='evryTime' >Subscribe and delivery every </label>
+                                <select name="weeks" id="weeks">
+                                    <option value="4 weeks">4 weeks</option>
+                                    <option value="3 weeks">3 weeks</option>
+                                    <option value="2 weeks">2 weeks</option>
+                                    <option value="1 weeks">1 week</option>
+                                </select>
+                            </div>
+                            <p className={root.description}>
+                                Subscribe now and get the 10% of discount on every recurring order.
+                                The discount will be applied at checkout. See details
+                            </p>
+
+                        </div>
+
+
+                        <button
+                        onClick={() => dispatch(addItemToCart({...data, quantity}))} 
+                        className={root.addToCart}> <BsCart3/> + Add to cart</button>
                     </div>
                     
-                    <div className={root.everyWeek}>
-                        <div className={root.weekInput}>
-                            <input type='radio' />
-                            <label>Subscribe and delivery every </label>
-                            <select name="weeks" id="weeks">
-                                <option value="4 weeks">4 weeks</option>
-                                <option value="3 weeks">3 weeks</option>
-                                <option value="2 weeks">2 weeks</option>
-                                <option value="1 weeks">1 week</option>
-                            </select>
-                        </div>
-                        <p className={root.description}>
-                            Subscribe now and get the 10% of discount on every recurring order.
-                            The discount will be applied at checkout. See details
-                        </p>
 
-                    </div>
-
-
-                    <button
-                     onClick={() => dispatch(addItemToCart({...data, quantity}))} 
-                     className={root.addToCart}> <BsCart3/> + Add to cart</button>
                 </div>
-                
-
             </div>
 
         </div>

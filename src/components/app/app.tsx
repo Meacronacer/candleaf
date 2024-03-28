@@ -1,4 +1,5 @@
 import CartPage from '../../pages/cartPage/cartPage';
+import CheckOutPage from '../../pages/checkoutPage/checkoutPage';
 import HomePage from '../../pages/homePage/homePage';
 import Layout from '../../pages/layout/layout';
 import ProductDetailPage from '../../pages/productDetailPage/productDetailPage';
@@ -16,7 +17,7 @@ const App = () => {
             <Route path='/' element={<HomePage/>} />
             <Route path='/product/:productId' element={<ProductDetailPage/>} />
             <Route path='/cart' element={<CartPage/>} />
-            <Route path='/auth' element={<Layout> <Authentication /> </Layout>} />
+            <Route path='/checkout' element={<CheckOutPage/> } />
             <Route path='/shipping' element={<Layout> <Shipping/> </Layout>} />
             <Route path='/payment' element={<Layout> <Payment/> </Layout>} />
             <Route path='/thanks' element={<Layout> <ThanksForOrder/> </Layout>} />

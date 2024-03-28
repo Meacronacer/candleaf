@@ -9,10 +9,17 @@ import { useState } from 'react'
 import { useAppSelector } from '../../hooks/hooks'
 
 
-const Navbar = () => {
+interface navbarProps {
+    showOnlyLogo?: boolean
+}
+
+const Navbar: React.FC<navbarProps> = ({showOnlyLogo = false}) => {
     const [menuToggle, setMenuToggle] = useState(true)
     const {count} = useAppSelector(state => state.cart)
 
+    if (showOnlyLogo) {
+        return <nav className={root.navbar}><Link to='/' className={root.logo} ><img src={Logo} alt='logo' /></Link></nav>
+    }
 
     return <nav className={root.navbar}>
         { menuToggle ? <IoMenuSharp size={40} onClick={() => setMenuToggle(prev => !prev)} className={root.mobileMenu} />

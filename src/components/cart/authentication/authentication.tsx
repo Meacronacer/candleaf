@@ -1,11 +1,26 @@
+import { useAppDispatch, useAppSelector } from '../../../hooks/hooks'
 import CartNavigation from '../cartNavigation/cartNavigation'
 import SummaryProducts from '../summaryProducts/summaryProducts'
 import root from './authentication.module.scss'
-
+import { changeShippingAddress } from '../../../redux/slices/shippingSlice'
+import { useState } from 'react'
+import { useForm, SubmitHandler } from "react-hook-form"
+import { contactInfo } from '../../../redux/slices/shippingSlice'
 
 const Authentication = () => {
-    return <section className={root.authentication}>
+    const dispatch = useAppDispatch()
 
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+      } = useForm<contactInfo>({mode:'onBlur'})
+
+    const onSubmit: SubmitHandler<contactInfo> = (data) => dispatch(changeShippingAddress(data))
+
+
+    return <section className={root.authentication}>
         <div className={root.usefInfo}>
             <CartNavigation/>
             <div className={root.contact}>
@@ -16,49 +31,149 @@ const Authentication = () => {
                 </div>
             </div>
 
-            <input className={root.EmailOrPhone} placeholder='Email or mobile phone number' />
-
-            <div className={root.discount}>
-                <input type='checkbox' id='saveInfo' />
-                <label htmlFor='saveInfo'>Add me to Candleaf newsletter for a 10% discount</label>
-            </div>
-
-            <div className={root.ShippingAddress}>
-                <h2>Shipping Address</h2>
-
-                <div className={root.nameAndSecondName} >
-                    <input className={root.name} placeholder='Name' />
-                    <input className={root.secondName} placeholder='Second Name' />
-                </div>
-
-                <input className={root.EmailOrPhone} placeholder='Address and number' />
-                <input className={root.EmailOrPhone} placeholder='Shipping note (optional)' />
-
-
-                <div className={root.city}>
-                    <input placeholder='City' />
-                    <input placeholder='Postal Code' />
-                    <input placeholder='Province' list="select" name="select" />
-
-                    <datalist id="select">    
-                        <option value="Trans"/>
-                        <option value="Fund"/>
-                        <option value="Insta"/>
-                    </datalist>
-                </div>
-
-                <input className={root.EmailOrPhone} placeholder='Country/Region' />
-
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input 
+                    className={root.EmailOrPhone}
+                    {...register('email', {
+                        required: 'user email is required',
+                        pattern: {
+                            value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                            message: 'user email, must be a valid email according to RFC2822'
+                        }
+                    })}
+                />
+                {errors.email && <div className='error-text'>{errors.email.message}</div>}
                 <div className={root.discount}>
-                    <input type='checkbox' id='discount' />
-                    <label htmlFor='discount'>Save this informations for a future fast checkout</label>
+                    <input type='checkbox' id='saveInfo' />
+                    <label htmlFor='saveInfo'>Add me to Candleaf newsletter for a 10% discount</label>
                 </div>
-            </div>
 
-            <div className={root.submit}>
-                <a className={root.back}>Back to cart</a>
-                <button>Go to shipping</button>
-            </div>
+                <div className={root.ShippingAddress}>
+                    <h2>Shipping Address</h2>
+
+                    <div className={root.nameAndSecondName} >
+                        <input 
+                            className={root.name} 
+                            placeholder='Name'
+                            {...register(`shipping.${0}.name`, {
+                                required: 'Name is required',
+                                minLength: {
+                                    value: 3,
+                                    message: 'name must have at least 3 characters'
+                                }
+                            })}
+                        />
+                        <input 
+                            className={root.secondName} 
+                            placeholder='Second Name'
+                            {...register(`shipping.${1}.secondName`, {
+                                required: 'second Name is required',
+                                minLength: {
+                                    value: 3,
+                                    message: 'name must have at least 3 characters'
+                                }
+                            })}
+                        />
+                    </div>
+                    {errors.shipping && <div className='error-text'>{errors.shipping[0]?.name?.message}</div>}
+                    {errors.shipping && <div className='error-text'>{errors.shipping[1]?.secondName?.message}</div>}
+
+                    <input 
+                        className={root.EmailOrPhone} 
+                        placeholder='Address and number'
+                        {...register(`shipping.${2}.address`, {
+                            required: 'address is required',
+                            minLength: {
+                                value: 5,
+                                message: 'address must have at least 5 characters'
+                            }
+                        })}
+                        
+                    />
+                    {errors.shipping && <div className='error-text'>{errors.shipping[2]?.address?.message}</div>}
+
+                    <input 
+                        className={root.EmailOrPhone} 
+                        placeholder='Shipping note (optional)' 
+                        {...register(`shipping.${3}.shippingNote`)}
+                    />
+
+                    <div className={root.city}>
+                        <input 
+                            placeholder='City' 
+                            {...register(`shipping.${4}.city`, {
+                                required: 'city is required',
+                                pattern: {
+                                    value:/[A-Za-z]/,
+                                    message: 'only text'
+                                },
+                                minLength: {
+                                    value: 4,
+                                    message: 'city must have at least 4 characters'
+                                }
+                            })}
+                        />
+                        <input 
+                            placeholder='Postal Code' 
+                            {...register(`shipping.${5}.postalCode`, {
+                                required: 'postalCode is required',
+                                minLength: {
+                                    value: 2,
+                                    message: 'postal code must have at least 2 characters'
+                                },
+                                pattern: {
+                                    value: /[0-9]/,
+                                    message: 'only numbers'
+                                }
+
+                            })}
+                        />
+                        <input placeholder='Province'
+                            list="select"
+                            {...register(`shipping.${6}.province`, {
+                                required: 'province is required',
+                                minLength: {
+                                    value: 2,
+                                    message: 'province must have at least 2 characters'
+                                }
+                            })}
+                        />
+
+                        <datalist id="select">    
+                            <option value="Trans"/>
+                            <option value="Fund"/>
+                            <option value="Insta"/>
+                        </datalist>
+                    </div>
+
+                    {errors.shipping && <div className='error-text'>{errors.shipping[4]?.city?.message}</div>}
+                    {errors.shipping && <div className='error-text'>{errors.shipping[5]?.postalCode?.message}</div>}
+                    {errors.shipping && <div className='error-text'>{errors.shipping[6]?.province?.message}</div>}
+
+                    <input 
+                        className={root.EmailOrPhone}
+                        placeholder='Country/Region'
+                        {...register(`shipping.${7}.country`, {
+                            required: 'country is required',
+                            minLength: {
+                                value: 3,
+                                message: 'country must have at least 3 characters'
+                            }
+                        })}
+                    />
+                    {errors.shipping && <div className='error-text'>{errors.shipping[7]?.country?.message}</div>}
+
+                    <div className={root.discount}>
+                        <input type='checkbox' id='discount' />
+                        <label htmlFor='discount'>Save this informations for a future fast checkout</label>
+                    </div>
+                </div>
+
+                <div className={root.submit}>
+                    <a className={root.back}>Back to cart</a>
+                    <button type='submit' >Go to shipping</button>
+                </div>
+            </form>
 
         </div>
 
