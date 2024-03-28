@@ -5,6 +5,8 @@
     display: flex;
     column-gap:100px;
     margin-left: 135px;
+    max-width: 445px;
+    max-width: 100%;
 
     .pText {
         display: flex;
@@ -33,8 +35,7 @@
     }
 
     .contactInfo {
-        width: 445px;
-        height: 100px;
+        width: 100%;
         margin-top: 47px;
         margin-bottom: 40px;
         border: 1px solid rgba(86, 178, 128, 0.2);
@@ -81,4 +82,42 @@
         }
     }
 
+}
+
+
+@media (max-width:1200px) {
+    .shipping {
+        margin-left: 0;
+        padding-inline: 10px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .shipping {
+        
+        &__inside {
+
+            .contactInfo {
+                .contact {
+                    font-size: 14px;
+                    padding: 5px 10px !important;
+                }
+            }
+
+            .toPayment {
+                flex-direction: column-reverse;
+                row-gap: 25px;
+
+                button {
+                    width: 350px;
+                }
+
+                .back {
+                    margin-inline: auto;
+                }
+            }
+
+        }
+    }
 }

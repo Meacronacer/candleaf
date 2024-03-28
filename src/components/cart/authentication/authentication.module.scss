@@ -7,8 +7,8 @@
     margin-left: 135px;
 
     .usefInfo {
-
-        width: 445px;
+        max-width: 445px;
+        width: 100%;
         display: flex;
         flex-direction: column;
 
@@ -59,7 +59,10 @@
         .contact {
             margin-top: 44px;
             display: flex;
+            align-items:center;
             text-align: left;
+            width: 100%;
+            max-width: 450px;
     
             .account {
                 margin-left: auto;
@@ -101,5 +104,41 @@
 
 
 
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .authentication {
+        margin-left: 0;
+        .usefInfo {
+            align-items: center;
+            .submit {
+                column-gap: 50px;
+            }
+        }
+    }
+
+}
+
+
+@media (max-width: 480px) {
+    .authentication {
+        padding-inline: 10px;
+        .usefInfo {
+            .submit {
+                width: 100%;
+                max-width: 350px;
+                row-gap: 25px;
+                flex-direction: column-reverse;
+                align-items:center;
+
+                button {
+                    width: 100%;
+                    max-width: 350px;
+
+                }
+            }
+        }
     }
 }

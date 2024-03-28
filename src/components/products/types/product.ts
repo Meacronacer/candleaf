@@ -1,8 +1,8 @@
 export interface Product {
-    id?: number
+    id: number
     name: string
     image: string | undefined
     price: number
-    onClick: (id: string | undefined) => void
+    onClick?: (id: string | undefined) => void
 }
 

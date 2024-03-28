@@ -29,7 +29,8 @@
     .billingAddress {
         border: 1px solid #e5e5e5;
         border-radius: 7px;
-        width: 445px;
+        width: 100%;
+        max-width: 445px;
         height: 105px;
         margin-top: 23px;
         margin-bottom: 40px;
@@ -53,14 +54,16 @@
         margin-top: 23px;
         margin-bottom: 40px;
         border-radius: 7px;
-        width: 445px;
+        width: 100%;
+        max-width: 445px;
         height: 256px;
         display: flex;
         flex-direction: column;
         align-items: center;
 
         .cardNumber {
-            width: 408px;
+            width: 100%;
+            max-width: 408px;
             margin-top: 24px;
 
             .expiration {
@@ -72,7 +75,8 @@
 
         .logo {
             border-radius: 7px 7px 0 0;
-            width: 445px;
+            width: 100%;
+            max-width: 445px;
             height: 58px;
             display: flex;
             align-items: center;
@@ -97,4 +101,28 @@
         }
     }
 
+}
+
+
+@media (max-width: 1200px) {
+    .payment {
+        margin-left: 0;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .payment {
+
+        .paymentMethod {
+
+            .paynow {
+                flex-direction: column-reverse;
+                text-align: center;
+                row-gap: 25px;
+            
+            }
+        }
+    }
+    
 }

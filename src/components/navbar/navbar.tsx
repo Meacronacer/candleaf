@@ -6,9 +6,12 @@ import root from './navbar.module.scss'
 import { Link } from 'react-router-dom'
 import { IoMenuSharp, IoCloseSharp } from "react-icons/io5";
 import { useState } from 'react'
+import { useAppSelector } from '../../hooks/hooks'
+
 
 const Navbar = () => {
     const [menuToggle, setMenuToggle] = useState(true)
+    const {count} = useAppSelector(state => state.cart)
 
 
     return <nav className={root.navbar}>
@@ -23,6 +26,7 @@ const Navbar = () => {
         <div className={root.cart}>
             <img src={Profile} alt='profile' />
             <Link to='/cart'><img alt='cart' src={Cart} /></Link>
+            {count > 0 && <div className={root.itemCount}>{count}</div>}
         </div>
     </nav>
 }

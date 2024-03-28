@@ -32,7 +32,8 @@
             font-weight: 500;
 
             img {
-                width: 160px;
+                max-width: 160px;
+                width: 100%;
                 height: 120px;
                 background-color: #f7f8fa;
             }
@@ -46,6 +47,10 @@
                 display: flex;
                 column-gap: 30px;
                 text-align: left;
+            }
+
+            td:last-child {
+                width: 150px;
             }
 
           }
@@ -94,4 +99,51 @@
         
     }
 
+}
+
+
+
+@media (max-width: 1150px) {
+    .cart {
+        .productsTable {
+            width: 740px
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .cart {
+        .productsTable {
+            max-width: 1140px;
+            width: 100%;
+            padding-inline: 10px;
+        }
+    }
+}
+
+
+@media (max-width: 560px) {
+    .cart {
+        .productsTable {
+            padding-inline: 10px;
+
+            td {
+                padding-inline: 5px;
+            }
+
+            td:first-child {
+                flex-direction: column;
+                row-gap: 15px;
+            }
+
+            .totalPrice {
+                flex-direction: column;
+                float: none;
+                max-width: 350px;
+                margin-inline: auto;
+                row-gap: 20px;
+            }
+        }
+    }
 }

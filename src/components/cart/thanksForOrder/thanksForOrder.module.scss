@@ -7,11 +7,12 @@
     margin-left: 165px;
 
     .thanks {
-        width: 450px;
+        width: 100%;
+        max-width: 450px;
+        padding-inline: 10px;
         height: 500px;
         display: flex;
         flex-direction: column;
-        align-items: center;
         row-gap:25px;
 
         .text {
@@ -34,5 +35,11 @@
 
     }
 
+}
 
+
+@media (max-width: 1200px) {
+    .order {
+        margin-left: 0;
+    }
 }

@@ -19,6 +19,11 @@
         height: auto;
         text-align: center;
         transition: background-color 0.2s;
+
+        &:disabled {
+          background-color: #809087;
+          color: #fff;
+        }
     }
 
     .inputBox {

@@ -16,7 +16,7 @@
     
     img {
         width: 255px;
-        height: fit-content;
+        height: 180px;
         background-color: #F7F8FA;
         box-shadow: none;
     }
@@ -51,7 +51,7 @@
 }
 
 
-@media (max-width:480px) {
+@media (max-width:580px) {
     .card {
         width: 346px;
         height: 200px;

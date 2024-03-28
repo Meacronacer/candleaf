@@ -57,7 +57,7 @@ const Payment = () => {
                 </div>
 
                 <div className={root.paynow}>
-                    <a>Back to shipping</a>
+                    <a className='greenTextWithDash'>Back to shipping</a>
                     <button>Pay now</button>
                 </div>
             

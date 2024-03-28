@@ -9,7 +9,7 @@ const Shipping = () => {
 
     return <div className={root.shipping}>
 
-        <div>
+        <div className={root.shipping__inside}>
             <CartNavigation/>
 
             <ShipTo />
