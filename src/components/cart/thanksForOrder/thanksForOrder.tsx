@@ -2,8 +2,15 @@ import CartNavigation from '../cartNavigation/cartNavigation'
 import SummaryProducts from '../summaryProducts/summaryProducts'
 import root from './thanksForOrder.module.scss'
 import checkCircle from '../../../assets/CheckCircle.svg'
-
+import { useNavigate } from 'react-router-dom'
+import { clearCart } from '../../../redux/slices/cartSlice'
+import { useAppDispatch } from '../../../hooks/hooks'
 const ThanksForOrder = () => {
+
+    const navigate = useNavigate()
+    const dispatch = useAppDispatch()
+
+
     return <div className={root.order}>
         <div className={root.thanks}>
             <CartNavigation/>
@@ -18,7 +25,10 @@ const ThanksForOrder = () => {
                 </p>
             </div>
 
-            <button>Back to shopping</button>
+            <button onClick={() => {
+                dispatch(clearCart())
+                navigate('/')
+            }} >Back to shopping</button>
 
             <a className='greenTextWithDash'>Print receipt</a>
 

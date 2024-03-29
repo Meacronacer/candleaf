@@ -4,7 +4,7 @@ import { useAppSelector } from '../../../hooks/hooks'
 
 
 const SummaryProducts = () => {
-    const {cartItems, totalPrice} = useAppSelector(state => state.cart)
+    const {cartItems, totalPrice, isPaid} = useAppSelector(state => state.cart)
 
     const products = cartItems.map(item => {
         return <tr key={item.id}>
@@ -13,7 +13,7 @@ const SummaryProducts = () => {
                         <div className={root.itemCount}>{item.quantity}</div>
                         <p>
                         <span>{item.name}®</span> <br/>
-                        <span>${(item.price * item.quantity).toFixed(2)}</span> 
+                        <span className={isPaid ? 'green-text': ''}>${(item.price * item.quantity).toFixed(2)}</span> 
                         </p>
                     </td>
                 </tr>
@@ -49,8 +49,8 @@ const SummaryProducts = () => {
 
         <div className={root.line}></div>
 
-        <p className={root.subTotal}>
-            Total
+        <p className={`${root.subTotal} ${isPaid ? 'green-text': ''}`}>
+        {isPaid? 'Paid' : 'Total'}
             <span>
                 $ {totalPrice}
             </span>

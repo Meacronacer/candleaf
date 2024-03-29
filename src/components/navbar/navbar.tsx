@@ -5,8 +5,9 @@ import Cart from '../../assets/Cart.svg'
 import root from './navbar.module.scss'
 import { Link } from 'react-router-dom'
 import { IoMenuSharp, IoCloseSharp } from "react-icons/io5";
-import { useState } from 'react'
-import { useAppSelector } from '../../hooks/hooks'
+import { useEffect, useState } from 'react'
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
+import { clearCart } from '../../redux/slices/cartSlice'
 
 
 interface navbarProps {
@@ -15,7 +16,15 @@ interface navbarProps {
 
 const Navbar: React.FC<navbarProps> = ({showOnlyLogo = false}) => {
     const [menuToggle, setMenuToggle] = useState(true)
-    const {count} = useAppSelector(state => state.cart)
+    const {count, isPaid} = useAppSelector(state => state.cart)
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        console.log(window.location.href)
+        if (isPaid && !window.location.href.endsWith('/payment')) {
+            dispatch(clearCart())
+        }
+    }, [])
 
     if (showOnlyLogo) {
         return <nav className={root.navbar}><Link to='/' className={root.logo} ><img src={Logo} alt='logo' /></Link></nav>

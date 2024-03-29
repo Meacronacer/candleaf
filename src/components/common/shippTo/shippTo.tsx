@@ -1,17 +1,21 @@
+import { Link } from 'react-router-dom'
+import { useAppSelector } from '../../../hooks/hooks'
 import ShippingMethod from '../shippingMethod/shippingMethod'
 import root from './shipTo.module.scss'
 // styles used from global.scss
 
 const ShipTo = ({showShippMethodInContactInfo = false}) => {
 
+    const {email, shipping} = useAppSelector(state => state.shipping)
+
     return <div className={root.contactInfo}>
         <div className='contact'>
             <p className='pText'>
                 Contact
-                <span className='sSpan' title='joe.spagnuolo@uxbly.com'>joe.spagnuolo@uxbly.com</span>
+                <span className='sSpan' title={email}>{email}</span>
             </p>
 
-            <a className='edit'>Edit</a>
+            <Link to='/checkout' className='edit'>Edit</Link>
         </div>
 
         <div className='line'></div>
@@ -19,11 +23,11 @@ const ShipTo = ({showShippMethodInContactInfo = false}) => {
         <div className='contact'>
             <p className='pText'>
                 Ship to
-                <span className='sSpan' title='Via Firenze 23, 92023, Campobello di  Licata AG, Italia'
-                >Via Firenze 23, 92023, Campobello di  Licata AG, Italia</span>
+                <span className='sSpan' title={`${shipping[2].address}, ${shipping[5].postalCode}, ${shipping[4].city}, ${shipping[7].country}`}
+                >{shipping[2].address}, {shipping[5].postalCode}, {shipping[4].city}, {shipping[7].country}zxccccccccccccccccccccccccccccccc</span>
             </p>
 
-            <a className='edit'>Edit</a>
+            <Link to='/checkout' className='edit'>Edit</Link>
         </div>
 
         {showShippMethodInContactInfo && <>

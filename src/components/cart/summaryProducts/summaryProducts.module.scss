@@ -32,8 +32,18 @@
         width: 410px;
         text-align: left;
         font-family: var(--first-family);
-        line-height: 183%;
         color: #616161;
+
+        span {
+            float: right;
+        }
+    }
+    .subTotalPaid {
+        margin-top: 15px;
+        width: 410px;
+        text-align: left;
+        font-family: var(--first-family);
+        color: #56b280;
 
         span {
             float: right;

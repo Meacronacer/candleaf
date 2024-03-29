@@ -1,11 +1,12 @@
+import { Link, useNavigate } from 'react-router-dom'
 import ShipTo from '../../common/shippTo/shippTo'
 import ShippingMethod from '../../common/shippingMethod/shippingMethod'
 import CartNavigation from '../cartNavigation/cartNavigation'
 import SummaryProducts from '../summaryProducts/summaryProducts'
 import root from './shipping.module.scss'
 
-
 const Shipping = () => {
+    const navigate = useNavigate()
 
     return <div className={root.shipping}>
 
@@ -19,8 +20,8 @@ const Shipping = () => {
             <ShippingMethod/>
 
             <div className={root.toPayment}>
-                <a className={root.back}>Back to details</a>
-                <button>Go to payment</button>
+                <Link to='/checkout' className={root.back}>Back to details</Link>
+                <button onClick={() => navigate('/payment')} >Go to payment</button>
             </div>
 
         </div>

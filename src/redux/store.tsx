@@ -1,10 +1,10 @@
 
+import { persistStore,persistReducer,FLUSH,REHYDRATE,PAUSE,PERSIST,PURGE,REGISTER, } from 'redux-persist'
 import { configureStore, combineReducers} from '@reduxjs/toolkit'
 import { productsApi } from './api/productsSlice'
 import cartSlice from './slices/cartSlice'
 import shippingSlice from './slices/shippingSlice'
 import storage from 'redux-persist/lib/storage'
-import { persistStore,persistReducer,FLUSH,REHYDRATE,PAUSE,PERSIST,PURGE,REGISTER, } from 'redux-persist'
 
 
 const persistConfig = {

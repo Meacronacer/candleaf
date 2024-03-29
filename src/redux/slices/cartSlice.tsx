@@ -10,12 +10,15 @@ interface Cart {
     cartItems: Array<CartItem>
     totalPrice: number
     count: number
+    isPaid: boolean
 }
 
 const initialState: Cart = {
     'cartItems': [],
     'totalPrice': 0.00,
-    'count': 0
+    'count': 0,
+    'isPaid': false
+
 }
 
 
@@ -53,10 +56,24 @@ const cartSlice = createSlice({
         quantityDecrement: (state, action: PayloadAction<number>) => {
                 state.cartItems[action.payload].quantity -= 1
                 state.totalPrice -= state.cartItems[action.payload].price
-        }
+        },
+        clearCart: (state) => {
+            state.cartItems = []
+            state.count = 0
+            state.totalPrice = 0.00
+            state.isPaid = false
+        },
+        setIsPaid: (state, action: PayloadAction<boolean>) => {
+          state.isPaid = action.payload  
+        } 
     }
 })
 
 
-export const { addItemToCart, removeItemFromCart, quantityIncrement, quantityDecrement } = cartSlice.actions
+export const { addItemToCart,
+    removeItemFromCart,
+    quantityIncrement,
+    quantityDecrement,
+    clearCart,
+    setIsPaid } = cartSlice.actions
 export default cartSlice.reducer

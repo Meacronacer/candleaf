@@ -1,23 +1,29 @@
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks'
+import { changeShippingAddress } from '../../../redux/slices/shippingSlice'
+import { useForm, SubmitHandler } from "react-hook-form"
+import { contactInfo } from '../../../redux/slices/shippingSlice'
+import { useNavigate } from 'react-router-dom'
 import CartNavigation from '../cartNavigation/cartNavigation'
 import SummaryProducts from '../summaryProducts/summaryProducts'
 import root from './authentication.module.scss'
-import { changeShippingAddress } from '../../../redux/slices/shippingSlice'
-import { useState } from 'react'
-import { useForm, SubmitHandler } from "react-hook-form"
-import { contactInfo } from '../../../redux/slices/shippingSlice'
+
 
 const Authentication = () => {
     const dispatch = useAppDispatch()
+    const navigate = useNavigate()
+
+    const {email, shipping} = useAppSelector(state => state.shipping)
 
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
       } = useForm<contactInfo>({mode:'onBlur'})
 
-    const onSubmit: SubmitHandler<contactInfo> = (data) => dispatch(changeShippingAddress(data))
+    const onSubmit: SubmitHandler<contactInfo> = (data) => {
+        dispatch(changeShippingAddress(data))
+        navigate('/shipping')
+    }
 
 
     return <section className={root.authentication}>
@@ -35,6 +41,7 @@ const Authentication = () => {
                 <input 
                     className={root.EmailOrPhone}
                     {...register('email', {
+                        value: email,
                         required: 'user email is required',
                         pattern: {
                             value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -56,6 +63,7 @@ const Authentication = () => {
                             className={root.name} 
                             placeholder='Name'
                             {...register(`shipping.${0}.name`, {
+                                value: shipping[0].name,
                                 required: 'Name is required',
                                 minLength: {
                                     value: 3,
@@ -67,6 +75,7 @@ const Authentication = () => {
                             className={root.secondName} 
                             placeholder='Second Name'
                             {...register(`shipping.${1}.secondName`, {
+                                value: shipping[1].secondName,
                                 required: 'second Name is required',
                                 minLength: {
                                     value: 3,
@@ -82,6 +91,7 @@ const Authentication = () => {
                         className={root.EmailOrPhone} 
                         placeholder='Address and number'
                         {...register(`shipping.${2}.address`, {
+                            value:shipping[2].address,
                             required: 'address is required',
                             minLength: {
                                 value: 5,
@@ -102,6 +112,7 @@ const Authentication = () => {
                         <input 
                             placeholder='City' 
                             {...register(`shipping.${4}.city`, {
+                                value: shipping[4].city,
                                 required: 'city is required',
                                 pattern: {
                                     value:/[A-Za-z]/,
@@ -117,6 +128,7 @@ const Authentication = () => {
                             placeholder='Postal Code' 
                             {...register(`shipping.${5}.postalCode`, {
                                 required: 'postalCode is required',
+                                value: shipping[5].postalCode,
                                 minLength: {
                                     value: 2,
                                     message: 'postal code must have at least 2 characters'
@@ -131,6 +143,7 @@ const Authentication = () => {
                         <input placeholder='Province'
                             list="select"
                             {...register(`shipping.${6}.province`, {
+                                value: shipping[6].province,
                                 required: 'province is required',
                                 minLength: {
                                     value: 2,
@@ -154,6 +167,7 @@ const Authentication = () => {
                         className={root.EmailOrPhone}
                         placeholder='Country/Region'
                         {...register(`shipping.${7}.country`, {
+                            value: shipping[7].country,
                             required: 'country is required',
                             minLength: {
                                 value: 3,
@@ -170,7 +184,7 @@ const Authentication = () => {
                 </div>
 
                 <div className={root.submit}>
-                    <a className={root.back}>Back to cart</a>
+                    <a onClick={() => navigate('/cart')} className={root.back}>Back to cart</a>
                     <button type='submit' >Go to shipping</button>
                 </div>
             </form>
