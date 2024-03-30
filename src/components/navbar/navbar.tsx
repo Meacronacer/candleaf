@@ -39,7 +39,7 @@ const Navbar: React.FC<navbarProps> = ({showOnlyLogo = false}) => {
         </ul>
         <div className={root.cart}>
             <img src={Profile} alt='profile' />
-            <Link to='candleaf/cart'><img alt='cart' src={Cart} /></Link>
+            <Link to='/cart'><img alt='cart' src={Cart} /></Link>
             {count > 0 && <div className={root.itemCount}>{count}</div>}
         </div>
     </nav>

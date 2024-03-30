@@ -26,7 +26,7 @@ const Shipping = () => {
 
             <div className={root.toPayment}>
                 <Link to='candleaf/details' className='greenTextWithDash'>Back to details</Link>
-                <button onClick={() => navigate('candleaf/payment')} >Go to payment</button>
+                <button onClick={() => navigate('/payment')} >Go to payment</button>
             </div>
 
         </div>

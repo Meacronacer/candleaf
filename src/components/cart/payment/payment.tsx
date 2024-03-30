@@ -24,7 +24,7 @@ const Payment = () => {
   const {email} = useAppSelector(state => state.shipping)
   const dispatch = useAppDispatch()
 
-  if (!email) return <Navigate to='candleaf/' />
+  if (!email) return <Navigate to='/' />
 
   const {
     register,
@@ -254,7 +254,7 @@ const Payment = () => {
             </div>
 
             <div className={root.paynow}>
-              <Link to='candleaf/shipping' className="greenTextWithDash">Back to shipping</Link>
+              <Link to='/shipping' className="greenTextWithDash">Back to shipping</Link>
               <button disabled={count === 0} type="submit">Pay now</button>
             </div>
           </form>

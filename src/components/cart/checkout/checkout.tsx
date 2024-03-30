@@ -15,7 +15,7 @@ const Authentication = () => {
     const {email, shipping} = useAppSelector(state => state.shipping)
     const {count} = useAppSelector(state => state.cart)
 
-    if (count === 0) return <Navigate to='candleaf/' />
+    if (count === 0) return <Navigate to='/' />
 
     const {
         register,
@@ -25,7 +25,7 @@ const Authentication = () => {
 
     const onSubmit: SubmitHandler<contactInfo> = (data) => {
         dispatch(changeShippingAddress(data))
-        navigate('candleaf/shipping')
+        navigate('/shipping')
     }
 
 
@@ -187,7 +187,7 @@ const Authentication = () => {
                 </div>
 
                 <div className={root.submit}>
-                    <a onClick={() => navigate('candleaf/cart')} className='greenTextWithDash'>Back to cart</a>
+                    <a onClick={() => navigate('/cart')} className='greenTextWithDash'>Back to cart</a>
                     <button type='submit' >Go to shipping</button>
                 </div>
             </form>
