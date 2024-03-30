@@ -254,7 +254,7 @@ const Payment = () => {
             </div>
 
             <div className={root.paynow}>
-              <Link to='/shipping' className="greenTextWithDash">Back to shipping</Link>
+              <Link to='../candleaf/shipping' className="greenTextWithDash">Back to shipping</Link>
               <button disabled={count === 0} type="submit">Pay now</button>
             </div>
           </form>

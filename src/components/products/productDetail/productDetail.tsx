@@ -98,7 +98,7 @@ const ProductDetail: React.FC = () => {
 
               {
               isAddedToCart ? 
-                <button onClick={() => navigate("/cart")}>
+                <button onClick={() => navigate("/candleaf/cart")}>
                     <BsCart3 /> Go to cart
                 </button> 
               

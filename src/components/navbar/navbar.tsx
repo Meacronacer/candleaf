@@ -25,21 +25,21 @@ const Navbar: React.FC<navbarProps> = ({showOnlyLogo = false}) => {
     }, [])
 
     if (showOnlyLogo) {
-        return <nav className={root.navbar}><Link to='/' className={root.logo} ><img src={Logo} alt='logo' /></Link></nav>
+        return <nav className={root.navbar}><Link to='/candleaf' className={root.logo} ><img src={Logo} alt='logo' /></Link></nav>
     }
 
     return <nav className={root.navbar}>
         { menuToggle ? <IoMenuSharp size={40} onClick={() => setMenuToggle(prev => !prev)} className={root.mobileMenu} />
                      : <IoCloseSharp size={40} onClick={() => setMenuToggle(prev => !prev)} className={root.mobileMenu} /> }
-        <Link to='/' className={root.logo} ><img src={Logo} alt='logo'/></Link>
+        <Link to='/candleaf/' className={root.logo} ><img src={Logo} alt='logo'/></Link>
         <ul className={menuToggle ? root.links : root.Mobilelinks}>
-            <li className={root.item}><Link to='/'>Discovery <img alt='v' src={Vector} /> </Link></li>
-            <li><Link to="/">About</Link></li>
-            <li><Link to="/">Contact us</Link></li>
+            <li className={root.item}><Link to='candleaf/'>Discovery <img alt='v' src={Vector} /> </Link></li>
+            <li><Link to="candleaf/">About</Link></li>
+            <li><Link to="candleaf/">Contact us</Link></li>
         </ul>
         <div className={root.cart}>
             <img src={Profile} alt='profile' />
-            <Link to='/cart'><img alt='cart' src={Cart} /></Link>
+            <Link to='../candleaf/cart'><img alt='cart' src={Cart} /></Link>
             {count > 0 && <div className={root.itemCount}>{count}</div>}
         </div>
     </nav>
