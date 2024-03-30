@@ -187,7 +187,7 @@ const Authentication = () => {
                 </div>
 
                 <div className={root.submit}>
-                    <a onClick={() => navigate('/cart')} className='greenTextWithDash'>Back to cart</a>
+                    <a onClick={() => navigate('candleaf/cart')} className='greenTextWithDash'>Back to cart</a>
                     <button type='submit' >Go to shipping</button>
                 </div>
             </form>

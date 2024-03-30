@@ -25,8 +25,8 @@ const Shipping = () => {
             <ShippingMethod/>
 
             <div className={root.toPayment}>
-                <Link to='/details' className='greenTextWithDash'>Back to details</Link>
-                <button onClick={() => navigate('/payment')} >Go to payment</button>
+                <Link to='candleaf/details' className='greenTextWithDash'>Back to details</Link>
+                <button onClick={() => navigate('candleaf/payment')} >Go to payment</button>
             </div>
 
         </div>

@@ -27,7 +27,7 @@ const ThanksForOrder = () => {
 
             <button onClick={() => {
                 dispatch(clearCart())
-                navigate('/')
+                navigate('candleaf/')
             }} >Back to shopping</button>
 
             <a className='greenTextWithDash'>Print receipt</a>

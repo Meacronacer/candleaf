@@ -63,7 +63,7 @@ const Cart = () => {
             </>
             :
             <> <h1 className={root.title}>Your cart is Empty</h1>
-                    <Link to='/'>Back to shopping</Link> 
+                    <Link to='candleaf/'>Back to shopping</Link> 
             </>}
     </section>
 }
