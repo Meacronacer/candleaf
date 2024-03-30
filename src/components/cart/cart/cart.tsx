@@ -57,7 +57,7 @@ const Cart = () => {
                             </div>
                             <span>Tax and shipping cost will be calculated later</span>
                         </div>
-                        <button onClick={() => navigate('/details')}>Check-out</button>
+                        <button onClick={() => navigate('candleaf/details')}>Check-out</button>
                     </div>
                 </div>
             </>

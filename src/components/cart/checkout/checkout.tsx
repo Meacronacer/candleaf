@@ -15,7 +15,7 @@ const Authentication = () => {
     const {email, shipping} = useAppSelector(state => state.shipping)
     const {count} = useAppSelector(state => state.cart)
 
-    if (count === 0) return <Navigate to='/' />
+    if (count === 0) return <Navigate to='candleaf/' />
 
     const {
         register,
@@ -25,7 +25,7 @@ const Authentication = () => {
 
     const onSubmit: SubmitHandler<contactInfo> = (data) => {
         dispatch(changeShippingAddress(data))
-        navigate('/shipping')
+        navigate('candleaf/shipping')
     }
 
 

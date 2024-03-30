@@ -24,7 +24,7 @@ const Payment = () => {
   const {email} = useAppSelector(state => state.shipping)
   const dispatch = useAppDispatch()
 
-  if (!email) return <Navigate to='/' />
+  if (!email) return <Navigate to='candleaf/' />
 
   const {
     register,
