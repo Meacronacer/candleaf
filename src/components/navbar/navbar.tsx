@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
 import { clearCart } from '../../redux/slices/cartSlice'
 
-
 interface navbarProps {
     showOnlyLogo?: boolean
 }
@@ -20,7 +19,6 @@ const Navbar: React.FC<navbarProps> = ({showOnlyLogo = false}) => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        console.log(window.location.href)
         if (isPaid && !window.location.href.endsWith('/payment')) {
             dispatch(clearCart())
         }
@@ -33,11 +31,11 @@ const Navbar: React.FC<navbarProps> = ({showOnlyLogo = false}) => {
     return <nav className={root.navbar}>
         { menuToggle ? <IoMenuSharp size={40} onClick={() => setMenuToggle(prev => !prev)} className={root.mobileMenu} />
                      : <IoCloseSharp size={40} onClick={() => setMenuToggle(prev => !prev)} className={root.mobileMenu} /> }
-        <Link to='/' className={root.logo} ><img src={Logo} alt='logo' /></Link>
+        <Link to='/' className={root.logo} ><img src={Logo} alt='logo'/></Link>
         <ul className={menuToggle ? root.links : root.Mobilelinks}>
-            <li className={root.item}><a href="default.asp">Discovery <img alt='v' src={Vector} /> </a></li>
-            <li><a href="news.asp">About</a></li>
-            <li><a href="contact.asp">Contact us</a></li>
+            <li className={root.item}><Link to='/'>Discovery <img alt='v' src={Vector} /> </Link></li>
+            <li><Link to="/">About</Link></li>
+            <li><Link to="/">Contact us</Link></li>
         </ul>
         <div className={root.cart}>
             <img src={Profile} alt='profile' />

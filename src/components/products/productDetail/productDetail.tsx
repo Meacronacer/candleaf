@@ -7,15 +7,24 @@ import { useState } from "react";
 import { addItemToCart } from "../../../redux/slices/cartSlice";
 import { useAppDispatch } from "../../../hooks/hooks";
 import { PuffLoader } from "react-spinners";
+import Quantity from "../../cart/cart/quantity/quantity";
 
 const ProductDetail: React.FC = () => {
-  const quantity = 1;
+  const [quantity, setQuantity] = useState<number>(1);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const { productId } = useParams();
   const { data, isLoading } = useGetProductByIdQuery(productId);
   const [isAddedToCart, setIsAddedTocart] = useState<boolean>(false);
+
+  const incrementQuntity = () => {
+    setQuantity(prev => prev + 1)
+  }
+
+  const decrementQuntity = () => {
+    setQuantity(prev => prev - 1)
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,7 +57,12 @@ const ProductDetail: React.FC = () => {
             <div className={root.priceAndQuantity}>
               <span className={root.price}>${data.price}</span>
               <div className={root.quantity}>
-                {/* <Quantity id={data.id} quantity={1} /> */}
+                <Quantity incrementQuntity={incrementQuntity}
+                          decrementQuntity={decrementQuntity}
+                          detailPage={true}
+                          id={data.id} 
+                          quantity={quantity} 
+                 />
               </div>
             </div>
 

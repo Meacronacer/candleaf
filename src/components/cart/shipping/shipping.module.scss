@@ -5,7 +5,6 @@
     display: flex;
     column-gap:100px;
     margin-left: 135px;
-    max-width: 445px;
     max-width: 100%;
 
     .pText {
@@ -24,14 +23,6 @@
         white-space:nowrap; 
         text-overflow:ellipsis; 
         width:  300px; 
-    }
-
-
-    a {
-        margin-left: auto;
-        font-family: var(--third-family);
-        font-weight: 400;
-        line-height: 111%;
     }
 
     .contactInfo {

@@ -1,0 +1,21 @@
+
+
+.cartNavigation {
+    font-size: 16px !important;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    a {
+        font-size: 16px !important;
+    }
+
+    li {
+        font-size: 16px !important;
+    }
+
+    .current {
+        cursor: text;
+        font-weight: 700;
+    }
+}

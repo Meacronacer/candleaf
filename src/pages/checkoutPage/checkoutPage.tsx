@@ -1,4 +1,4 @@
-import Authentication from "../../components/cart/authentication/authentication"
+import Authentication from "../../components/cart/checkout/checkout"
 import Navbar from "../../components/navbar/navbar"
 
 

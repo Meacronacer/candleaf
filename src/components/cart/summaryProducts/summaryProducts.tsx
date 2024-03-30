@@ -1,5 +1,4 @@
 import root from './summaryProducts.module.scss'
-import spiced from '../../../assets/spiced-mint.png'
 import { useAppSelector } from '../../../hooks/hooks'
 
 
@@ -36,7 +35,7 @@ const SummaryProducts = () => {
         <p className={root.subTotal}>
             Subtotal
             <span>
-                $  {totalPrice}
+                $  {totalPrice.toFixed(2)}
             </span>
         </p>
 
@@ -52,7 +51,7 @@ const SummaryProducts = () => {
         <p className={`${root.subTotal} ${isPaid ? 'green-text': ''}`}>
         {isPaid? 'Paid' : 'Total'}
             <span>
-                $ {totalPrice}
+                $ {totalPrice.toFixed(2)}
             </span>
         </p>
 

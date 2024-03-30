@@ -5,9 +5,9 @@ import root from "./payment.module.scss";
 import creditCartLogo from "../../../assets/CreditCardFill.svg";
 import ThanksForOrder from "../thanksForOrder/thanksForOrder";
 import { SubmitHandler, useController, useForm } from "react-hook-form";
-import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { setIsPaid } from "../../../redux/slices/cartSlice";
+import { Link, Navigate } from "react-router-dom";
 
 interface paymentData {
   cardNumber: number | string;
@@ -19,15 +19,19 @@ interface paymentData {
 }
 
 const Payment = () => {
+
+  const {isPaid, count} = useAppSelector(state => state.cart)
+  const {email} = useAppSelector(state => state.shipping)
+  const dispatch = useAppDispatch()
+
+  if (!email) return <Navigate to='/' />
+
   const {
     register,
     control,
     formState: { errors },
     handleSubmit,
   } = useForm<paymentData>({ mode: "onBlur" });
-
-  const {isPaid, count} = useAppSelector(state => state.cart)
-  const dispatch = useAppDispatch()
 
   const {
     field: cardNumberField,
@@ -119,13 +123,13 @@ const Payment = () => {
   const formatCvv = (string: string) => {
     return string.replace(/\D/g, "").substring(0, 4);
   };
-  const onSubmit: SubmitHandler<paymentData> = (data, event) => {
+  const onSubmit: SubmitHandler<paymentData> = (_, event) => {
     event?.preventDefault();
     dispatch(setIsPaid(true))
   };
 
   return (
-    <div className={root.payment}>
+    <section className={root.payment}>
       {isPaid ? (
         <ThanksForOrder />
       ) : (
@@ -250,7 +254,7 @@ const Payment = () => {
             </div>
 
             <div className={root.paynow}>
-              <a className="greenTextWithDash">Back to shipping</a>
+              <Link to='/shipping' className="greenTextWithDash">Back to shipping</Link>
               <button disabled={count === 0} type="submit">Pay now</button>
             </div>
           </form>
@@ -258,7 +262,7 @@ const Payment = () => {
           <SummaryProducts />
         </>
       )}
-    </div>
+    </section>
   );
 };
 

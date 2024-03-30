@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Product } from "../../components/products/types/product";
 
 
 export interface contactInfo {

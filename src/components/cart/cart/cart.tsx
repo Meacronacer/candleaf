@@ -29,7 +29,7 @@ const Cart = () => {
     })
     
 
-    return <div className={root.cart}>
+    return <section className={root.cart}>
             {cartProducts.length ? 
             <>
                 <h1 className={root.title}>Your cart products</h1>
@@ -57,7 +57,7 @@ const Cart = () => {
                             </div>
                             <span>Tax and shipping cost will be calculated later</span>
                         </div>
-                        <button onClick={() => navigate('/checkout')}>Check-out</button>
+                        <button onClick={() => navigate('/details')}>Check-out</button>
                     </div>
                 </div>
             </>
@@ -65,7 +65,7 @@ const Cart = () => {
             <> <h1 className={root.title}>Your cart is Empty</h1>
                     <Link to='/'>Back to shopping</Link> 
             </>}
-    </div>
+    </section>
 }
 
 export default Cart
