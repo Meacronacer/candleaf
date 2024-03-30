@@ -13,14 +13,14 @@ import { Routes, Route } from "react-router-dom";
 const App = () => {
     return <div className={root.app}>
         <Routes>
-            <Route path='/' element={<HomePage/>} />
-            <Route path='/product/:productId' element={<ProductDetailPage/>} />
-            <Route path='/cart' element={<CartPage/>} />
-            <Route path='/details' element={<CheckOutPage/> } />
-            <Route path='/shipping' element={<ShippingPage/> } />
-            <Route path='/payment' element={<PaymentPage/> } />
-            <Route path='/thanks' element={<Layout> <ThanksForOrder/> </Layout>} />
-            <Route path='/*' element={<div><h1>PAGE NOT FOUND 404</h1></div>} />
+            <Route path='candleaf/' element={<HomePage/>} />
+            <Route path='candleaf/product/:productId' element={<ProductDetailPage/>} />
+            <Route path='candleaf/cart' element={<CartPage/>} />
+            <Route path='candleaf/details' element={<CheckOutPage/> } />
+            <Route path='candleaf/shipping' element={<ShippingPage/> } />
+            <Route path='candleaf/payment' element={<PaymentPage/> } />
+            <Route path='candleaf/thanks' element={<Layout> <ThanksForOrder/> </Layout>} />
+            <Route path='*' element={<div><h1>PAGE NOT FOUND 404</h1></div>} />
         </Routes>
     </div>
 }
